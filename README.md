@@ -148,7 +148,3 @@ client/index.html
 **Muhammad Usman**
 
 ---
-
-## 📄 License
-
-This project is for educational purposes.
