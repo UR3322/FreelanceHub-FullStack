@@ -1,11 +1,157 @@
+/* 1. Theme Variables */
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #64748b;
+  --success-color: #22c55e;
+  --background: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #1e293b;
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
 
-body{font-family:Arial;padding:20px;}
-#services{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;}
-.card{border:1px solid #ccc;padding:10px;cursor:grab;}
-#dropZone{border:2px dashed #000;height:100px;margin-top:20px;}
+/* 2. Global Resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-@media (max-width: 768px) {
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--background);
+  color: var(--text-main);
+  line-height: 1.6;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+}
+
+/* 3. Navigation/Controls Layout (Flexbox) */
+.controls-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input, select {
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+input:focus, select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* 4. Services Grid (CSS Grid) */
+#services {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile-first: 1 column */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 5. Card Component */
+.card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  color: var(--primary-color);
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+}
+
+/* Buttons inside cards */
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 10px;
+  padding-top: 15px;
+}
+
+button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+button:first-of-type { background: #e2e8f0; color: var(--text-main); }
+button:last-of-type { background: var(--primary-color); color: white; }
+
+button:hover {
+  filter: brightness(0.9);
+}
+
+/* 6. Drop Zone Styling */
+#dropZone {
+  border: 3px dashed var(--primary-color);
+  background: rgba(37, 99, 235, 0.05);
+  border-radius: var(--border-radius);
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto;
+  max-width: 1200px;
+  font-weight: bold;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+#dropZone.drag-over {
+  background: rgba(37, 99, 235, 0.15);
+  transform: scale(1.02);
+}
+
+/* 7. Responsive Breakpoints */
+@media (min-width: 640px) {
+  .controls-container {
+    flex-direction: row;
+  }
+  
   #services {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr); /* Tablets: 2 columns */
+  }
+}
+
+@media (min-width: 1024px) {
+  #services {
+    grid-template-columns: repeat(3, 1fr); /* Desktop: 3 columns */
   }
 }
