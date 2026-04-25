@@ -1,11 +1,4 @@
 
-# FreelanceHub
-
-## Run
-npm install
-npm start
-
-Open client/index.html
 
 # 🚀 FreelanceHub - Full Stack Web Application
 
