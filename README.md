@@ -1,19 +1,4 @@
 
-# FreelanceHub Complete
-
-## Run
-npm install
-npm start
-
-Open client/index.html
-
-## Features
-- Search
-- Filter
-- Sort
-- Save & Hire
-- Drag & Drop hire
-- REST API backend
 
 # 🚀 FreelanceHub - Full Stack Web Application
 
@@ -156,7 +141,3 @@ client/index.html
 **Muhammad Usman**
 
 ---
-
-## 📄 License
-
-This project is for educational purposes.
