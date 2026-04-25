@@ -3,3 +3,9 @@ body{font-family:Arial;padding:20px;}
 #services{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;}
 .card{border:1px solid #ccc;padding:10px;cursor:grab;}
 #dropZone{border:2px dashed #000;height:100px;margin-top:20px;}
+
+@media (max-width: 768px) {
+  #services {
+    grid-template-columns: 1fr;
+  }
+}
