@@ -1,19 +1,11 @@
 
-# FreelanceHub Complete
+# FreelanceHub
 
 ## Run
 npm install
 npm start
 
 Open client/index.html
-
-## Features
-- Search
-- Filter
-- Sort
-- Save & Hire
-- Drag & Drop hire
-- REST API backend
 
 # 🚀 FreelanceHub - Full Stack Web Application
 
